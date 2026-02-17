@@ -4,9 +4,7 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
     restart: unless-stopped
-    command: tunnel --no-autoupdate run
-    environment:
-      - TUNNEL_TOKEN=eyJhIjoiNThhYTA0ODg4Y2JiYjU0YzgzODgwZTgyYzE3YzIyMWMiLCJ0IjoiZjE2MzA5OTUtODAwMC00MDc2LWFiMGEtZDliMDBlZTU1NTJjIiwicyI6ImJxRENFRFlEMkQ2M2dhZzBTc3J2OWZhV1FwVU5WVUo3ZWVsU01KamhMQjg9In0=
+    command: tunnel --no-autoupdate run ${CLOUDFLARE_TUNNEL_TOKEN}
     networks:
       - proxy
 
